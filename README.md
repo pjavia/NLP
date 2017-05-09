@@ -1,2 +1,3 @@
 GloVe
+
 word2vec
