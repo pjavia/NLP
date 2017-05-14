@@ -1,3 +1,1 @@
-GloVe
 
-word2vec
