@@ -1,12 +1,13 @@
 import numpy as np
-import cPickle
 import random
 
 
-par = (2, (128, 1), 'datasetSentences.txt')
+#par = (2, 128, 'datasetSentences.txt')
 
 
 # Give window size odd number please... lol makes the coding easy...
+
+
 
 
 class word2vec:
@@ -26,9 +27,11 @@ class word2vec:
         self.numeral_pairs = []
         self.train_list = []
         self.codomain = []
+        self.embeddings_words = dict()
+        self.metadata = []
 
     # Preprocessing based on data avaialable add appropriate definition definition but don't mess up domain and range of function.
-    def sentimental_analysis(self):
+    def fetch_data(self):
         raw_lines = []
         with open(self.raw_data) as f:
 
@@ -54,6 +57,7 @@ class word2vec:
                     self.word_key.update({k:order})
                     order += 1
                     self.count_word2vec.update({k: 1})
+            self.vocabulary = order
         #print self.order_word2vec
         #print self.count_word2vec
         #print self.word_key
@@ -62,8 +66,10 @@ class word2vec:
 
         #print self.order_word2vec.keys()
         for i in self.order_word2vec.keys():
-            self.embeddings.update({i: np.random.rand(self.embeddings_dim[0], self.embeddings_dim[1])})
+            self.embeddings.update({i: np.random.rand(self.embeddings_dim)+0.05})
+            self.metadata.append(self.order_word2vec.get(i))
             cc = self.count_word2vec.get((self.order_word2vec.get(i)))
+            self.embeddings_words.update({self.order_word2vec.get(i): np.random.rand(self.embeddings_dim)+0.05})
             for y_ in range(0, cc):
                 self.codomain.append(i)
         #print self.codomain
@@ -147,16 +153,16 @@ class word2vec:
 
 
 
-w = word2vec(par)
-w.sentimental_analysis()
-w.prepare_data_for_word2vec()
-w.train()
+#w = word2vec(par)
+#w.fetch_datas()
+#w.prepare_data_for_word2vec()
+#w.train()
 
-with open('trained_dump','wb') as fp:
-    cPickle.dump(w.embeddings,fp)
-    cPickle.dump(w.order_word2vec,fp)
-    cPickle.dump(w.word_key,fp)
-    cPickle.dump(w.count_word2vec,fp)
+#with open('trained_dump','wb') as fp:
+#    cPickle.dump(w.embeddings,fp)
+#    cPickle.dump(w.order_word2vec,fp)
+#    cPickle.dump(w.word_key,fp)
+#    cPickle.dump(w.count_word2vec,fp)
 
 
 
