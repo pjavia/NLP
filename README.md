@@ -2,7 +2,7 @@
 ## Skip Gram with Negative Sampling <br />  
 Implementation available in pure NumPy and Tensorflow <br />
 ## Embeddings <br />
-![alt text](https://github.com/pjavia/NLU/blob/master/word2vec/word_vis.gif)
+![alt text](https://github.com/pjavia/Natural-Language-Understanding/blob/master/word2vec/word_vis.gif)
 ## Loss <br />
-![alt text](https://github.com/pjavia/NLU/blob/master/word2vec/loss_vis.png)
+![alt text](https://github.com/pjavia/Natural-Language-Understanding/blob/master/word2vec/loss_vis.png)
 # GloVe
