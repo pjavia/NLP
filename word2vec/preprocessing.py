@@ -5,7 +5,6 @@ import random
 #par = (2, 128, 'datasetSentences.txt')
 
 
-# Give window size odd number please... lol makes the coding easy...
 
 
 
